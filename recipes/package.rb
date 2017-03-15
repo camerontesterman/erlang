@@ -46,7 +46,15 @@ when 'rhel', 'suse', 'fedora'
   end
 
   include_recipe 'yum-epel' if node['platform_family'] == 'rhel'
+
+  if !node['erlang']['package']['source'].nil?
+    remote_file "#{Chef::Config[:file_cache_path]}/erlang.rpm" do
+      source node['erlang']['package']['source']
+    end
+  end
+
   package 'erlang' do
     version node['erlang']['package']['version'] if node['erlang']['package']['version']
+    source "#{Chef::Config[:file_cache_path]}/erlang.rpm" if node['erlang']['package']['source']
   end
 end
