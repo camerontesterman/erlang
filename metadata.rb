@@ -20,6 +20,6 @@ recipe 'erlang::esl', "Installs Erlang from Erlang Solutions' package repositori
   supports os
 end
 
-source_url 'https://github.com/chef-cookbooks/erlang'
-issues_url 'https://github.com/chef-cookbooks/erlang/issues'
-chef_version '>= 12.1'
+# source_url 'https://github.com/chef-cookbooks/erlang'
+# issues_url 'https://github.com/chef-cookbooks/erlang/issues'
+# chef_version '>= 12.1'
